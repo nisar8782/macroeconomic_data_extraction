@@ -285,7 +285,7 @@ def nan_sum_up(df):
     return
 
 def columns_zeronanover3(df, threshold=0.3):
-    na_or_zero = input('Inserire "0" per cercare zeri o "na" per cercare valori mancanti: ')
+    na_or_zero = input('Enter "0" to search for zeros or "na" to search for missing values: ')
     
     numeric_columns = df.select_dtypes(include=[np.number]).columns
     total_count = {col: (df[col] == 0).sum() if na_or_zero == "0" else df[col].isna().sum() for col in numeric_columns}
